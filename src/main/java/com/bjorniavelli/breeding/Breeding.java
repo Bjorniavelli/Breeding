@@ -1,6 +1,8 @@
 package com.bjorniavelli.breeding;
 
 import com.bjorniavelli.breeding.handler.ConfigurationHandler;
+import com.bjorniavelli.breeding.init.ModItems;
+import com.bjorniavelli.breeding.init.ModTabs;
 import com.bjorniavelli.breeding.proxy.IProxy;
 import com.bjorniavelli.breeding.reference.Reference;
 import com.bjorniavelli.breeding.utility.Log;
@@ -25,6 +27,8 @@ public class Breeding
     {
         Log.log("Breeding PreInit");
         ConfigurationHandler.init(E.getSuggestedConfigurationFile());
+        ModItems.init();
+        ModTabs.preInit();
         Log.log("Breeding Finished PreInit");
     }
 
@@ -39,6 +43,7 @@ public class Breeding
     public void PostInit(FMLPostInitializationEvent E)
     {
         Log.log("Breeding PostInit");
+        ModTabs.postInit();
         Log.log("Breeding Finished PostInit");
     }
 
