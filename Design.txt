@@ -1,0 +1,10 @@
+Principles:
+
+Incrementalism: Everything should have some way to upgrade other things and be upgraded in turn.
+Encapsulation: Everything should encapsulate into standard objects for transfer, etc.
+Unitasking: Everything should do one thing and do it well.
+
+Goals:
+
+Breeding: Player should be able to breed animals (cows) to do specific things.
+Capsules: Player should be able to capture entities and store them as items.
