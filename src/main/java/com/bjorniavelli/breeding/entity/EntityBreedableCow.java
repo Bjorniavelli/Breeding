@@ -1,4 +1,4 @@
-package com.bjorniavelli.breeding.entities;
+package com.bjorniavelli.breeding.entity;
 
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.world.World;
