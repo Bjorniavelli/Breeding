@@ -1,0 +1,17 @@
+[
+{
+  "modid": "Breeding",
+  "name": "Breeding",
+  "description": "Make two things into more things!",
+  "version": "1.8.9-0.0.1",
+  "mcversion": "1.8.9",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["Bjorniavelli"],
+  "credits": "",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
