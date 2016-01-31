@@ -1,6 +1,7 @@
 package com.bjorniavelli.breeding;
 
 import com.bjorniavelli.breeding.handler.ConfigurationHandler;
+import com.bjorniavelli.breeding.init.ModEntities;
 import com.bjorniavelli.breeding.init.ModItems;
 import com.bjorniavelli.breeding.init.ModTabs;
 import com.bjorniavelli.breeding.proxy.IProxy;
@@ -27,6 +28,7 @@ public class Breeding
     {
         Log.log("Breeding PreInit");
         ConfigurationHandler.init(E.getSuggestedConfigurationFile());
+        ModEntities.init();
         ModItems.init();
         ModTabs.preInit();
         Log.log("Breeding Finished PreInit");

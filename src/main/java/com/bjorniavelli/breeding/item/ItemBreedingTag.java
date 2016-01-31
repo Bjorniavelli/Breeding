@@ -32,15 +32,23 @@ public class ItemBreedingTag extends Item
             if (!playerIn.capabilities.isCreativeMode)
                 stack.stackSize -= 1;
 
-            EntityBreedableCow newTarget = new EntityBreedableCow(target);
+            if (!playerIn.worldObj.isRemote) {
+                EntityBreedableCow newTarget = new EntityBreedableCow(target);
+                newTarget.setPositionAndRotation(
+                        target.posX,
+                        target.posY,
+                        target.posZ,
+                        target.rotationYaw,
+                        target.rotationPitch
+                        ); // BreedableCows are always facing North(?)
+                playerIn.worldObj.spawnEntityInWorld(newTarget);
+                target.setDead();
+            }
             return true;
         }
         else
         {
             return super.itemInteractionForEntity(stack, playerIn, target);
         }
-
-        Log.log("BreedingTag reached unreachable code!");
-        return false;
     }
 }

@@ -6,6 +6,8 @@ import net.minecraft.world.World;
 
 public class EntityBreedableCow extends EntityCow
 {
+    public static int trackingRange = 80;  //Why 80?  No idea how to find what a Cow's is.
+
     public EntityBreedableCow (World worldIn)
     {
         super (worldIn);
