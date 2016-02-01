@@ -1,5 +1,8 @@
 #Items
 item.breedingtag.name=Breeding Tag
 
+#Entities
+entity.Breeding.breedingcow.name=Breeding Cow
+
 #Creative Tabs
 itemGroup.tabBreeding=Breeding

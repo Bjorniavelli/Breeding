@@ -14,8 +14,8 @@ public class EntityBreedableCow extends EntityCow
 {
     // Possible Breeding Results:
     // Tier 1 (Basic traits):
-    public AttributeModifier maxHealthAttribute = new AttributeModifier(UUID.randomUUID(), "BreedableCowMaxHealthModifier", 100.0D, 0); // 0??  Really?  Where's my Enum!
-    public double maxHealthModifier;//// Health
+    public AttributeModifier maxHealthAttribute;
+    public double maxHealthModifier = 0.0D;//// Health
     //// Breed Frequency
     //// Length of inLove
     //// Sound Time
@@ -75,24 +75,30 @@ public class EntityBreedableCow extends EntityCow
     public EntityBreedableCow (World worldIn)
     {
         super (worldIn);
-        this.maxHealthModifier = 100.0; // SUPER COW!
-        // Yah... that's just temporary.
-        IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.maxHealth);
-        iattributeinstance.applyModifier(this.maxHealthAttribute);
+        applyStats();
     }
 
     public EntityBreedableCow (EntityLivingBase target)
     {
         super (target.getEntityWorld());
-        this.maxHealthModifier = 100.0;
+        //Copy information from target cow?  Or just create a new one... ?
+        applyStats();
+    }
+
+    private void applyStats ()
+    {
+        // Yah... that's just temporary.
+        this.maxHealthAttribute = new AttributeModifier(UUID.randomUUID(), "BreedableCowMaxHealthModifier", this.maxHealthModifier, 0); // 0??  Really?  Where's my Enum!
         IAttributeInstance iattributeinstance = this.getEntityAttribute(SharedMonsterAttributes.maxHealth);
         iattributeinstance.applyModifier(this.maxHealthAttribute);
-        //Copy information from target cow?  Or just create a new one... ?
     }
 
     public EntityCow createChild(EntityAgeable ageable)
     {
-        return new EntityBreedableCow(this.worldObj);
+        EntityBreedableCow child = new EntityBreedableCow(this);
+        child.maxHealthModifier++;
+
+        return child;
     }
 
     @Override

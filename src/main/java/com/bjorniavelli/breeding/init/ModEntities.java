@@ -10,7 +10,7 @@ public class ModEntities
 
     public static void init()
     {
-        EntityRegistry.registerModEntity(EntityBreedableCow.class, "Cow", id++, Breeding.instance, EntityBreedableCow.trackingRange, 1, true);
+        EntityRegistry.registerModEntity(EntityBreedableCow.class, "breedingcow", id++, Breeding.instance, EntityBreedableCow.trackingRange, 1, true);
     }
 
 }
